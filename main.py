@@ -1,40 +1,30 @@
 from flask import Flask
+import random
 
 app = Flask(__name__)
-
-
-def make_bold(function):
-    def wrapper():
-        return "<b>" + function() + "</b>"
-    return wrapper
-
-
-def make_emphasis(function):
-    def wrapper():
-        return "<em>" + function() + "</em>"
-    return wrapper
-
-
-def make_underlined(function):
-    def wrapper():
-        return "<u>" + function() + "</u>"
-    return wrapper
+random_number = random.randint(0, 9)
 
 
 @app.route('/')
-def hello_world():
-    return 'Hello World'
+def home():
+    return '<h1>Guess a number between 0 and 9!</h1>' \
+           '<h3>Type a "/" after the address in your search bar, followed by your guess.</h3>' \
+           '<img src="https://media.giphy.com/media/3o7aCSPqXE5C6T8tBC/giphy.gif">'
 
 
-@app.route("/bye")
-def bye():
-    return 'Bye'
+@app.route("/<int:guess>")
+def guess_number(guess):
+    if guess > random_number:
+        return '<h1 style="color: red">Too high, guess again!</h1>' \
+               '<img src="https://media.giphy.com/media/5noddpPJQxDNDaPWaP/giphy.gif">'
+    elif guess < random_number:
+        return '<h1 style="color: blue">Too low, guess again!</h1>' \
+               '<img src="https://media.giphy.com/media/B0AXfj1DdyoBAT6Ehn/giphy.gif">'
 
-
-@app.route("/username/<name>")
-def greet(name):
-    return f'Hello {name}'
+    else:
+        return '<h1 style="color: green">You guessed correctly!!</h1>' \
+               '<img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif">'
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
