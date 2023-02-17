@@ -10,22 +10,22 @@ DATA = json.load(data_file)
 
 @app.route('/')
 def home():
-    return '<h1>Guess a number between 0 and 9!</h1>' \
-           '<h3>Type a "/" after the address in your search bar, followed by your guess.</h3>' \
+    return f'<h1>{DATA["HOME_H1"]}</h1>' \
+           f'<h3>{DATA["HOME_H3"]}</h3>' \
            f'<img src={DATA["HOME_IMG"]}>'
 
 
 @app.route("/<int:guess>")
 def guess_number(guess):
     if guess > random_number:
-        return f'<h1 style={DATA["HIGH_COLOR"]}>Too high, guess again!</h1>' \
+        return f'<h1 style={DATA["HIGH_COLOR"]}>{DATA["HIGH_MESSAGE"]}</h1>' \
                f'<img src={DATA["HIGH_IMG"]}>'
     elif guess < random_number:
-        return f'<h1 style={DATA["LOW_COLOR"]}>Too low, guess again!</h1>' \
+        return f'<h1 style={DATA["LOW_COLOR"]}>{DATA["LOW_MESSAGE"]}</h1>' \
                f'<img src={DATA["LOW_IMG"]}>'
 
     else:
-        return f'<h1 style={DATA["CORRECT_COLOR"]}>You guessed correctly!!</h1>' \
+        return f'<h1 style={DATA["CORRECT_COLOR"]}>{DATA["CORRECT_MESSAGE"]}</h1>' \
                f'<img src={DATA["CORRECT_IMG"]}>'
 
 

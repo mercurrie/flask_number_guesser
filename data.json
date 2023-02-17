@@ -5,5 +5,10 @@
   "CORRECT_IMG": "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif",
   "LOW_COLOR": "color: red",
   "HIGH_COLOR": "color: blue",
-  "CORRECT_COLOR": "color: green"
+  "CORRECT_COLOR": "color: green",
+  "HOME_H1": "Guess a number between 0 and 9!",
+  "HOME_H3": "Type a '/' after the address in your search bar, followed by your guess.",
+  "LOW_MESSAGE": "Too low, guess again!",
+  "HIGH_MESSAGE": "Too high, guess again!",
+  "CORRECT_MESSAGE": "You guessed correctly!!"
 }
