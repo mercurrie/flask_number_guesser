@@ -1,0 +1,9 @@
+{
+  "HOME_IMG": "https://media.giphy.com/media/3o7aCSPqXE5C6T8tBC/giphy.gif",
+  "HIGH_IMG": "https://media.giphy.com/media/5noddpPJQxDNDaPWaP/giphy.gif",
+  "LOW_IMG": "https://media.giphy.com/media/B0AXfj1DdyoBAT6Ehn/giphy.gif",
+  "CORRECT_IMG": "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif",
+  "LOW_COLOR": "color: red",
+  "HIGH_COLOR": "color: blue",
+  "CORRECT_COLOR": "color: green"
+}
